@@ -23,14 +23,14 @@ We offer end-to-end Odoo implementation services, guiding you through the entire
 6. Support and Maintenance:
 Our commitment to your success doesn’t end with implementation. We provide ongoing support and maintenance services to ensure that your Odoo system runs smoothly and efficiently, allowing you to focus on your core business activities.
 
-## [Why Choose Doodex?] (https://www.youtube.com/watch?v=DfcKIoN3vgs)
+## [Why Choose Doodex?](https://www.youtube.com/watch?v=DfcKIoN3vgs)
 Expertise in Odoo: Our team has a deep understanding of the Odoo platform and its various modules, enabling us to deliver solutions that are both effective and efficient.
 Customized Solutions: We believe in providing solutions that are tailored to your specific needs, ensuring maximum ROI.
 Proven Track Record: We have successfully implemented Odoo solutions for a wide range of businesses across different industries.
 Commitment to Quality: Our focus on quality ensures that every solution we deliver meets the highest standards of excellence.
 Comprehensive Support: We offer continuous support and maintenance services to keep your system up-to-date and running smoothly.
 
-## [Get in Touch] (https://www.doodex.net/contactus)
+## [Get in Touch](https://www.doodex.net/contactus)
 If you are looking for a partner who can provide customized Odoo solutions tailored to your business needs, look no further than Doodex.
 Visit our website at www.doodex.net to learn more about our services and how we can help you achieve your business objectives.
 [get a free audit here](https://www.doodex.net/audit-gratuit)
