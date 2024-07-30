@@ -40,7 +40,7 @@ Advanced Sales Analysis
 This custom Odoo module enhances the Sales Analysis report by providing additional financial insights. It introduces three key metrics to give a more detailed view of the sales pipeline and cash flow status.
 
 ## [Features]
-# Amount Received:
+# [Amount Received]
 
 Displays the total amount for orders/items that have been fully invoiced and paid. This helps in identifying the revenue that has already been realized.
 # Waiting for Payment:
