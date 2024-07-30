@@ -1,4 +1,4 @@
-Welcome to Doodex: Your Partner in Tailor-Made Odoo Solutions
+![image](https://github.com/user-attachments/assets/81cf30b3-d3ee-4e3a-a0eb-79b1a73d77db)Welcome to Doodex: Your Partner in Tailor-Made Odoo Solutions
 At Doodex, we believe that every business is unique, with its own set of challenges and opportunities. That’s why we specialize in delivering customized Odoo solutions tailored to meet the specific needs of your organization. Our expertise in Python development and deep understanding of the Odoo platform enable us to provide unparalleled services that drive efficiency, enhance productivity, and support your business growth.
 
 ## [About Doodex](https://www.doodex.net/about-us)
@@ -34,3 +34,37 @@ Comprehensive Support: We offer continuous support and maintenance services to k
 If you are looking for a partner who can provide customized Odoo solutions tailored to your business needs, look no further than Doodex.
 Visit our website at www.doodex.net to learn more about our services and how we can help you achieve your business objectives.
 [get a free audit here](https://www.doodex.net/audit-gratuit)
+
+Advanced Sales Analysis
+## [Advanced Sales Analysis](https://www.doodex.net/en/blog/doodex-blog-2/sales-dashboard-example-with-odoo-88)
+This custom Odoo module enhances the Sales Analysis report by providing additional financial insights. It introduces three key metrics to give a more detailed view of the sales pipeline and cash flow status.
+
+## [Features]
+# Amount Received:
+
+Displays the total amount for orders/items that have been fully invoiced and paid. This helps in identifying the revenue that has already been realized.
+# Waiting for Payment:
+
+Shows the total amount for invoices that have been created but not yet paid. This is useful for tracking outstanding receivables and managing cash flow.
+# Amount to Invoice:
+
+Indicates the total amount for orders/items where invoices have not yet been created. This helps in understanding the potential future revenue and managing the invoicing process.
+
+## [Benefits]
+Improved Financial Visibility: Gain deeper insights into the financial status of sales orders.
+Better Cash Flow Management: Easily track payments received and outstanding invoices.
+Streamlined Invoicing Process: Keep track of orders that need to be invoiced, ensuring no revenue is missed.
+
+## [Installation]
+Download the module from this repository.
+Install the module in your Odoo instance.
+Navigate to the Sales Analysis report to view the new metrics.
+
+## [Usage]
+Once installed, the new metrics will be available in the Sales Analysis report. Use the filters and grouping options to analyze the data as needed.
+
+## [Compatibility]
+Odoo version: 16.0
+
+## [License]
+This module is licensed under www.doodex.net
