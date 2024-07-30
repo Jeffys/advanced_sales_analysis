@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/81cf30b3-d3ee-4e3a-a0eb-79b1a73d77db)Welcome to Doodex: Your Partner in Tailor-Made Odoo Solutions
+Welcome to Doodex: Your Partner in Tailor-Made Odoo Solutions
 At Doodex, we believe that every business is unique, with its own set of challenges and opportunities. That’s why we specialize in delivering customized Odoo solutions tailored to meet the specific needs of your organization. Our expertise in Python development and deep understanding of the Odoo platform enable us to provide unparalleled services that drive efficiency, enhance productivity, and support your business growth.
 
 ## [About Doodex](https://www.doodex.net/about-us)
@@ -40,14 +40,13 @@ Advanced Sales Analysis
 This custom Odoo module enhances the Sales Analysis report by providing additional financial insights. It introduces three key metrics to give a more detailed view of the sales pipeline and cash flow status.
 
 ## [Features]
-# [Amount Received]
-
+Amount Received:
 Displays the total amount for orders/items that have been fully invoiced and paid. This helps in identifying the revenue that has already been realized.
-# Waiting for Payment:
 
+Waiting for Payment:
 Shows the total amount for invoices that have been created but not yet paid. This is useful for tracking outstanding receivables and managing cash flow.
-# Amount to Invoice:
 
+Amount to Invoice:
 Indicates the total amount for orders/items where invoices have not yet been created. This helps in understanding the potential future revenue and managing the invoicing process.
 
 ## [Benefits]
