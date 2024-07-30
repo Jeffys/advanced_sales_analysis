@@ -42,13 +42,13 @@ class AccountMove(models.Model):
     def _compute_amount_paid(self):
         for move in self:
             if move.move_type == "out_refund":
-                if move.payment_state == "paid" or move.payment_state == "partial":
+                if move.payment_state in ['paid', 'in_payment', 'partial']:
                     move.amount_paid_cn = move.amount_total - move.amount_residual
                     print(f"amount paid CN= {move.amount_paid_cn}, id : {move.id}")
                     print(f"amount total= {move.amount_total}, id : {move.id}")
                     # print(f"residual = {move.amount_residual}, id : {move.id}")
             elif move.move_type == "out_invoice":
-                if move.payment_state == "paid" or move.payment_state == "partial":
+                if move.payment_state in ['paid', 'in_payment', 'partial']:
                     move.amount_paid = move.amount_total - move.amount_residual
                     print(f"amount paid= {move.amount_paid}, id : {move.id}")
                     print(f"amount total= {move.amount_total}, id : {move.id}")
@@ -66,7 +66,7 @@ class AccountMove(models.Model):
             if move.move_type == "out_refund":
                 for line in move.invoice_line_ids:
                     if line.product_id.name == "Down payment":
-                        if move.payment_state == "paid":
+                        if move.payment_state in ['paid', 'in_payment']:
                             amount_refund = line.price_subtotal
                             amount_refund_nopaid = 0
                         else:
@@ -75,14 +75,14 @@ class AccountMove(models.Model):
             elif move.move_type == "out_invoice":
                 for line in move.invoice_line_ids:
                     if line.product_id.name == "Down payment" and line.price_subtotal < 0:
-                        if move.payment_state == "paid":
+                        if move.payment_state in ['paid', 'in_payment']:
                             amount_dp = line.price_subtotal
                             amount_dp_nopaid = 0
                         else:
                             amount_dp = 0
                             amount_dp_nopaid = line.price_subtotal
                     elif line.product_id.name == "Down payment" and line.price_subtotal > 0:
-                        if move.payment_state == "paid":
+                        if move.payment_state in ['paid', 'in_payment']:
                             amount_dp2 = line.price_subtotal
                             amount_dp2_nopaid = 0
                         else:
@@ -95,11 +95,6 @@ class AccountMove(models.Model):
             move.amount_dp2_nopaid = amount_dp2_nopaid
             move.amount_refund = amount_refund
             move.amount_refund_nopaid = amount_refund_nopaid
-            print(f"move id : {move.id}, {move.move_type}, amount_refund : {move.amount_refund}, amount_refund_nopaid : {move.amount_refund_nopaid}")
-            print(f"move id : {move.id}, {move.move_type}, amount_dp : {move.amount_dp}, amount_dp_nopaid : {move.amount_dp_nopaid}")
-            print(f"move id : {move.id}, {move.move_type}, amount_dp2 : {move.amount_dp2}, amount_dp2_nopaid : {move.amount_dp2_nopaid}")
-            print(f"amount total= {move.amount_dp}, id : {move.id}")
-
 
 
 class SaleOrderLine(models.Model):
@@ -224,7 +219,7 @@ class SaleOrderLine(models.Model):
             fix_amount_received = 0.0
             for invoice_line in line._get_invoice_lines():
                 if invoice_line.move_id.state != 'cancel':
-                    if invoice_line.move_id.payment_state == "paid" or invoice_line.move_id.payment_state == "partial":
+                    if invoice_line.move_id.payment_state in ['paid', 'in_payment', 'partial']:
                         invoice_date = invoice_line.move_id.invoice_date or fields.Date.today()
                         amount_total = invoice_line.move_id.amount_untaxed
                         print(f"amount_total {invoice_line.move_id} = {invoice_line.move_id.amount_untaxed}  = {amount_total}")

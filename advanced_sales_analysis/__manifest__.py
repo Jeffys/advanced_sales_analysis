@@ -3,20 +3,20 @@
     'name': "advanced_sales_analysis",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
-
-    'description': """
-        Long description of module's purpose
+        This custom Odoo module enhances the Sales Analysis report by providing additional financial insights. It introduces three key metrics to give a more detailed view of the sales pipeline and cash flow status.
     """,
 
-    'author': "My Company",
+    'description': """
+        This custom Odoo module enhances the Sales Analysis report by providing additional financial insights. It introduces three key metrics to give a more detailed view of the sales pipeline and cash flow status.
+    """,
+
+    'author': "Doodex",
     'website': "https://www.doodex.net/",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/16.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Sales',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
