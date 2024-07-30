@@ -44,15 +44,9 @@ class AccountMove(models.Model):
             if move.move_type == "out_refund":
                 if move.payment_state in ['paid', 'in_payment', 'partial']:
                     move.amount_paid_cn = move.amount_total - move.amount_residual
-                    print(f"amount paid CN= {move.amount_paid_cn}, id : {move.id}")
-                    print(f"amount total= {move.amount_total}, id : {move.id}")
-                    # print(f"residual = {move.amount_residual}, id : {move.id}")
             elif move.move_type == "out_invoice":
                 if move.payment_state in ['paid', 'in_payment', 'partial']:
                     move.amount_paid = move.amount_total - move.amount_residual
-                    print(f"amount paid= {move.amount_paid}, id : {move.id}")
-                    print(f"amount total= {move.amount_total}, id : {move.id}")
-                # print(f"residual = {move.amount_residual}, id : {move.id}")
 
     @api.depends('amount_residual', 'invoice_line_ids.price_subtotal', 'invoice_line_ids', 'payment_state', 'move_type')
     def _compute_amount_dp(self):
@@ -173,7 +167,6 @@ class SaleOrderLine(models.Model):
                         amount_total = invoice_line.move_id.amount_untaxed
                         amount_dp_nopaid = invoice_line.move_id.amount_dp_nopaid + invoice_line.move_id.amount_dp2_nopaid - invoice_line.move_id.amount_refund_nopaid
                         amount_dp_nopaid_dp += invoice_line.move_id.amount_dp_nopaid + invoice_line.move_id.amount_dp2_nopaid - invoice_line.move_id.amount_refund_nopaid
-                        print(f"amount_dp_nopaid= {amount_dp_nopaid} = {invoice_line.move_id.amount_dp_nopaid} + {invoice_line.move_id.amount_dp2_nopaid} - {invoice_line.move_id.amount_refund_nopaid}")
                         amount_residual = invoice_line.move_id.amount_residual
                         check = self.env['account.move.line'].search(
                             [('move_id', '=', invoice_line.move_id.id), ('product_id.name', 'ilike', 'Down payment')])
@@ -185,7 +178,6 @@ class SaleOrderLine(models.Model):
                                 if check:
                                     dp_proportion = ( waiting_for_payment / (amount_total - invoice_line.move_id.amount_dp_nopaid) * invoice_line.move_id.amount_dp_nopaid)
                                     fixed_waiting_for_payment += (amount_residual - amount_dp_nopaid) * ((waiting_for_payment+dp_proportion) / (amount_total))
-                                    print(f"recivu : ({amount_residual} - {amount_dp_nopaid}) * (({waiting_for_payment}+{dp_proportion})/{amount_total})")
                                 else:
                                     fixed_waiting_for_payment += (amount_residual) * ((waiting_for_payment) / (amount_total))
 
@@ -199,7 +191,6 @@ class SaleOrderLine(models.Model):
                                     fixed_waiting_for_payment -= (amount_residual - amount_dp_nopaid) * ((waiting_for_payment + dp_proportion) / (amount_total))
                                 else:
                                     fixed_waiting_for_payment -= (amount_residual) * ((waiting_for_payment) / (amount_total))
-                        print(f"amonto recivu {line.name} = {fixed_waiting_for_payment}")
 
             if (amount_residual == 0 or line.amount_received == line.price_subtotal) and line.product_template_id.name != "Down payment":
                 line.waiting_for_payment = 0
@@ -222,12 +213,9 @@ class SaleOrderLine(models.Model):
                     if invoice_line.move_id.payment_state in ['paid', 'in_payment', 'partial']:
                         invoice_date = invoice_line.move_id.invoice_date or fields.Date.today()
                         amount_total = invoice_line.move_id.amount_untaxed
-                        print(f"amount_total {invoice_line.move_id} = {invoice_line.move_id.amount_untaxed}  = {amount_total}")
                         amount_paid = invoice_line.move_id.amount_paid
                         amount_paid_cn = invoice_line.move_id.amount_paid_cn
-                        print(f"amount_paid = {invoice_line.move_id.amount_paid}  = {amount_paid}")
                         amount_dp_paid += invoice_line.move_id.amount_dp2 + invoice_line.move_id.amount_dp - invoice_line.move_id.amount_refund
-                        print(f"amount dp paid = {amount_dp_paid}")
                         check = self.env['account.move.line'].search([('move_id','=',invoice_line.move_id.id),('product_id.name', 'ilike', 'Down payment')])
                         if invoice_line.move_id.move_type == 'out_invoice':
                             amount_received = invoice_line.currency_id._convert(invoice_line.price_subtotal, line.currency_id,line.company_id, invoice_date)
@@ -237,10 +225,8 @@ class SaleOrderLine(models.Model):
                                 if check:
                                     dp_proportion = (amount_received / (amount_total - invoice_line.move_id.amount_dp_nopaid) * invoice_line.move_id.amount_dp_nopaid)
                                     fix_amount_received += amount_paid * ((amount_received+dp_proportion) / (amount_total))
-                                    print(f"amount_received {invoice_line.move_id} =( ({amount_received} + {dp_proportion}) / {amount_total} ) * {amount_paid}= {fix_amount_received}")
                                 else:
                                     fix_amount_received += amount_paid * ((amount_received) / (amount_total))
-                                    print(f"amount_received {invoice_line.move_id} =( {amount_received} / {amount_total} ) * {amount_paid}= {fix_amount_received}")
                         elif invoice_line.move_id.move_type == 'out_refund':
                             amount_received = invoice_line.currency_id._convert(invoice_line.price_subtotal, line.currency_id,line.company_id, invoice_date)
                             if amount_total == 0:
@@ -249,11 +235,8 @@ class SaleOrderLine(models.Model):
                                 if check:
                                     dp_proportion = (amount_received / (amount_total - invoice_line.move_id.amount_dp_nopaid) * invoice_line.move_id.amount_dp_nopaid)
                                     fix_amount_received -= amount_paid_cn * ((amount_received+dp_proportion) / (amount_total))
-                                    print(f"amount_received ch {invoice_line.move_id} =( ({amount_received} + {dp_proportion}) / {amount_total} ) * {amount_paid_cn}= {fix_amount_received}")
                                 else:
                                     fix_amount_received -= amount_paid_cn * ((amount_received) / (amount_total))
-                                    print(f"amount_received {invoice_line.move_id} =( {amount_received} / {amount_total} ) * {amount_paid_cn}= {fix_amount_received}")
-                        print(f"amonto {line.name} = {fix_amount_received}")
 
             if line.product_template_id.name == "Down payment":
                 line.amount_received = amount_dp_paid
@@ -261,4 +244,3 @@ class SaleOrderLine(models.Model):
                 line.amount_received = 0
             else:
                 line.amount_received = fix_amount_received
-                print(f"amountttt {fix_amount_received}")
