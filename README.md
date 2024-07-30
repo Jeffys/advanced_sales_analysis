@@ -66,4 +66,4 @@ Once installed, the new metrics will be available in the Sales Analysis report. 
 Odoo version: 16.0
 
 ## License
-This module is licensed under www.doodex.net
+This module is licensed under [LGPLv3 licensed](./LICENSE)
