@@ -98,7 +98,7 @@ class SaleOrderLine(models.Model):
     amount_to_invoice = fields.Float(string='Amount Received', compute='_compute_amount_to_invoice', store=True)
 
 
-    @api.depends('waiting_for_payment', 'amount_received', 'state', 'price_reduce', 'product_id', 'untaxed_amount_invoiced', 'qty_delivered', 'product_uom_qty', 'invoice_lines.move_id.amount_paid')
+    @api.depends('waiting_for_payment', 'amount_received', 'state', 'product_id', 'untaxed_amount_invoiced', 'qty_delivered', 'product_uom_qty', 'invoice_lines.move_id.amount_paid')
     def _compute_amount_to_invoice(self):
         """ Total of remaining amount to invoice on the sale order line (taxes excl.) as
                 total_sol - amount already invoiced
