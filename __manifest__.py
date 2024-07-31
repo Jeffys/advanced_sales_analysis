@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "advanced_sales_analysis",
+    'name': "Advanced Sales Analysis",
 
     'summary': """
         This custom Odoo module enhances the Sales Analysis report by providing additional financial insights. It introduces three key metrics to give a more detailed view of the sales pipeline and cash flow status.
