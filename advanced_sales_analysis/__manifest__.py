@@ -11,17 +11,19 @@
     """,
 
     'author': "Doodex",
+    'company': "Doodex",
     'website': "https://www.doodex.net/",
 
     'category': 'Sales',
-    'version': '0.1',
+    'version': '16.0.1.0.0',
 
-    # any module necessary for this one to work correctly
     'depends': ['base','sale','account','sale_management'],
 
-    # always loaded
+
     'data': [
         # 'security/ir.model.access.csv',
     ],
+
+    'license': 'LGPL-3',
 
 }
