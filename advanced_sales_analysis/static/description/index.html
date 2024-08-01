@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Sales Analysis</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #333;
+        }
+        .hero {
+            background-color: #685563;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+        .container {
+            padding: 40px 20px;
+        }
+        .features-section {
+            background-color: #ebac55;
+            color: #fff;
+            padding: 40px 20px;
+        }
+        .features-section h2 {
+            font-weight: 700;
+            text-align: center;
+        }
+        .feature-card {
+            background-color: #fff;
+            color: #333;
+            border: none;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .feature-card h3 {
+            font-weight: 700;
+        }
+        .feature-card p {
+            font-weight: 300;
+        }
+        .contact-section {
+            background-color: #f4f4f4;
+            padding: 40px 20px;
+        }
+        .contact-section h2 {
+            font-weight: 700;
+        }
+        .contact-section p {
+            font-weight: 300;
+        }
+        .btn-primary {
+            background-color: #ebac55;
+            border-color: #ebac55;
+        }
+        .btn-primary:hover {
+            background-color: #d49b4d;
+            border-color: #d49b4d;
+        }
+        footer {
+            background-color: #685563;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .logos img {
+            max-height: 50px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <div class="logos">
+        <img src="./assets/doodex_odoo.png" alt="Company Logo">
+    </div>
+    <h1>Advanced Sales Analysis</h1>
+    <p>This custom Odoo module enhances the Sales Analysis report by providing additional financial insights.</p>
+    <a href="#features" class="btn btn-light btn-lg mt-4">Learn More</a>
+</header>
+
+<div class="container">
+    <section id="features" class="features-section">
+        <h2>Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Amount Received</h3>
+                    <p>Displays the total amount for orders/items that have been fully invoiced and paid. This helps in identifying the revenue that has already been realized.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Waiting for Payment</h3>
+                    <p>Shows the total amount for invoices that have been created but not yet paid. This is useful for tracking outstanding receivables and managing cash flow.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3>Amount to Invoice</h3>
+                    <p>Indicates the total amount for orders/items where invoices have not yet been created. This helps in understanding the potential future revenue and managing the invoicing process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="my-5">
+        <h2>Benefits</h2>
+        <ul>
+            <li><strong>Improved Financial Visibility:</strong> Gain deeper insights into the financial status of sales orders.</li>
+            <li><strong>Better Cash Flow Management:</strong> Easily track payments received and outstanding invoices.</li>
+            <li><strong>Streamlined Invoicing Process:</strong> Keep track of orders that need to be invoiced, ensuring no revenue is missed.</li>
+        </ul>
+    </section>
+
+    <section id="installation" class="my-5">
+        <h2>Installation</h2>
+        <ol>
+            <li>Download the module from this repository.</li>
+            <li>Install the module in your Odoo instance.</li>
+            <li>Navigate to the Sales Analysis report to view the new metrics.</li>
+        </ol>
+    </section>
+
+    <section id="usage" class="my-5">
+        <h2>Usage</h2>
+        <p>Once installed, the new metrics will be available in the Sales Analysis report. Use the filters and grouping options to analyze the data as needed.</p>
+    </section>
+
+    <section id="compatibility" class="my-5">
+        <h2>Compatibility</h2>
+        <p>Odoo version: 17.0</p>
+    </section>
+
+    <section id="license" class="my-5">
+        <h2>License</h2>
+        <p>This module is licensed under LGPLv3 licensed.</p>
+    </section>
+
+    <section id="contact" class="contact-section text-center">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need further information, feel free to reach out to us.</p>
+        <a href="https://www.doodex.net/en/contactus" class="btn btn-primary">Email Us</a>
+    </section>
+</div>
+
+<footer>
+    <div class="logos">
+        <img src="./assets/doodex_odoo.png" alt="Doodex Odoo Logo">
+    </div>
+    <p>&copy; 2024 Doodex. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
