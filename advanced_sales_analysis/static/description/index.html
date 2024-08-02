@@ -16,7 +16,8 @@
             color: #333;
         }
         .hero {
-            background-color: #685563;
+
+            background-color: #ebac55;
             color: #fff;
             text-align: center;
             padding: 100px 20px;
@@ -28,13 +29,13 @@
         }
         .hero p {
             font-size: 1.25rem;
-            font-weight: 300;
+            font-weight: 500;
         }
         .container {
             padding: 40px 20px;
         }
         .features-section {
-            background-color: #ebac55;
+            background-color: #685563;
             color: #fff;
             padding: 40px 20px;
         }
@@ -57,6 +58,16 @@
         .feature-card p {
             font-weight: 300;
         }
+        .image-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
         .contact-section {
             background-color: #f4f4f4;
             padding: 40px 20px;
@@ -76,14 +87,22 @@
             border-color: #d49b4d;
         }
         footer {
-            background-color: #685563;
+            background-color: #ebac55;
             color: #fff;
             text-align: center;
             padding: 10px 0;
         }
         .logos img {
+            max-height: 150px;
+            margin: 0 10px;
+        }
+        .logos_footer img {
             max-height: 50px;
             margin: 0 10px;
+        }
+        .separator {
+            border-top: 1px solid #ddd;
+            margin: 40px 0;
         }
     </style>
 </head>
@@ -123,6 +142,10 @@
         </div>
     </section>
 
+    <section class="image-section">
+        <img src="./assets/advanced_sales_analysis.png" alt="Descriptive Image">
+    </section>
+
     <section id="benefits" class="my-5">
         <h2>Benefits</h2>
         <ul>
@@ -156,6 +179,25 @@
         <p>This module is licensed under LGPLv3 licensed.</p>
     </section>
 
+    <div class="separator"></div>
+
+    <section id="about" class="my-5">
+        <h2></h2>
+        <p>Welcome to Doodex: Your Partner in Tailor-Made Odoo Solutions</p>
+        <p>At Doodex, we believe that every business is unique, with its own set of challenges and opportunities. That’s why we specialize in delivering customized Odoo solutions tailored to meet the specific needs of your organization. Our expertise in Python development and deep understanding of the Odoo platform enable us to provide unparalleled services that drive efficiency, enhance productivity, and support your business growth.</p>
+        <h3>About Doodex</h3>
+        <p>Doodex is a leading provider of business management solutions built on the Odoo framework. With a focus on customization and flexibility, we offer a wide range of services designed to optimize your business processes. Our team of experienced developers and consultants work closely with you to understand your requirements and deliver solutions that are perfectly aligned with your business goals.</p>
+        <h3>Our Services</h3>
+        <ul>
+            <li><strong>Odoo Customization:</strong> Our customization services ensure that the Odoo platform is tailored to fit your unique business needs. From modifying existing modules to developing new functionalities, we provide solutions that enhance the efficiency of your operations.</li>
+            <li><strong>Tailor-Made Solutions:</strong> At Doodex, we understand that one size does not fit all. Our tailor-made solutions are designed to address the specific challenges faced by your business. We offer bespoke development services that create a perfect match between Odoo’s capabilities and your business requirements.</li>
+            <li><strong>Python Development:</strong> Our team of skilled Python developers brings extensive experience in developing robust and scalable applications. Whether you need a custom module, a complex integration, or a standalone application, we leverage the power of Python to deliver high-quality solutions.</li>
+            <li><strong>Integration Services:</strong> We help you integrate Odoo with other systems and applications to ensure seamless data flow and unified operations. Our integration services cover a wide range of systems including CRM, ERP, eCommerce platforms, and more.</li>
+            <li><strong>Odoo Implementation:</strong> We offer end-to-end Odoo implementation services, guiding you through the entire process from initial consultation to final deployment. Our structured approach ensures a smooth transition and rapid adoption of the new system.</li>
+            <li><strong>Support and Maintenance:</strong> Our commitment to your success doesn’t end with implementation. We provide ongoing support and maintenance services to ensure that your Odoo system runs smoothly and efficiently, allowing you to focus on your core business activities.</li>
+        </ul>
+    </section>
+
     <section id="contact" class="contact-section text-center">
         <h2>Contact Us</h2>
         <p>If you have any questions or need further information, feel free to reach out to us.</p>
@@ -164,7 +206,7 @@
 </div>
 
 <footer>
-    <div class="logos">
+    <div class="logos_footer">
         <img src="./assets/doodex_odoo.png" alt="Doodex Odoo Logo">
     </div>
     <p>&copy; 2024 Doodex. All rights reserved.</p>

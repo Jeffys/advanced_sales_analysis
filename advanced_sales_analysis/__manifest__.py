@@ -24,6 +24,7 @@
         # 'security/ir.model.access.csv',
     ],
 
+    'images': ['static/description/banner.png'],
     'license': 'LGPL-3',
 
 }
